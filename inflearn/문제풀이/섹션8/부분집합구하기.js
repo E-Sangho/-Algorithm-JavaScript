@@ -1,17 +1,12 @@
-let ans = [];
-let N = 3;
-function DFSUtil(v) {
-    if (v > N) return;
-    ans.push(v);
-    DFSUtil(++v);
-    console.log(ans);
-    ans.pop();
-}
-
-function DFS() {
-    for (let i = 1; i <= N; ++i) {
-        DFSUtil(i, N);
+const DFSUtil = (depth, arr) => {
+    if (depth >= 3) {
+        console.log(arr);
+        return;
     }
-}
+    arr.push(depth + 1);
+    DFSUtil(depth + 1, arr);
+    arr.pop(depth + 1);
+    DFSUtil(depth + 1, arr);
+};
 
-DFS();
+DFSUtil(0, []);
