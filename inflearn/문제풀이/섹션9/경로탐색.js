@@ -7,7 +7,7 @@ function answer(N, arr) {
     function DFS(node, path) {
         marked[node] = true;
         path.push(node);
-        if (node === 5) {
+        if (node === N) {
             console.log(path);
             return;
         }
